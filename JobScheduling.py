@@ -27,6 +27,28 @@ def printJobScheduling(arr, t):
 	# print the sequence
 	print(job)
 
+# Practice
+def job_scheduling(jobs, timeSlots):
+
+	# Sort all the jobs according to the profit
+	jobs.sort(key=lambda x: x[2], reverse=True)
+
+	# To keep track of free time slots
+	freeSlots = [False]*timeSlots
+
+	# Store the answer - job names
+	answer = [None]*timeSlots
+
+	# Iterating over the jobs
+	for i in range(len(jobs)):
+		for j in range(min(timeSlots-1, jobs[i][1]-1)         ,-1,-1 ):		# Start, End, Reverse
+			if freeSlots[j] is False:
+				freeSlots[j] = True
+				answer[j] = jobs[i][0]
+				break
+	print(answer)
+		
+
 
 # Driver's Code
 if __name__ == '__main__':
@@ -38,4 +60,5 @@ if __name__ == '__main__':
 
 	print("Following is maximum profit sequence of jobs")
 	printJobScheduling(arr, 3)
-    
+	job_scheduling(arr, 3)
+
