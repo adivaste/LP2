@@ -27,6 +27,8 @@ def printJobScheduling(arr, t):
 	# print the sequence
 	print(job)
 
+
+
 # Practice
 def job_scheduling(jobs, timeSlots):
 

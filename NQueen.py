@@ -4,10 +4,12 @@ def solve_n_queens(n):
 
     def is_safe(row, col):
         # Check if the current position is safe for a queen
+
         # Check column
         for i in range(row):
             if board[i][col] == ' Q ':
                 return False
+
         # Check upper-left diagonal
         i, j = row, col
         while i >= 0 and j >= 0:
@@ -15,6 +17,7 @@ def solve_n_queens(n):
                 return False
             i -= 1
             j -= 1
+
         # Check upper-right diagonal
         i, j = row, col
         while i >= 0 and j < n:
@@ -22,7 +25,9 @@ def solve_n_queens(n):
                 return False
             i -= 1
             j += 1
+
         return True
+
 
     def backtrack(row):
         # Base case: If all queens are placed, add the solution
