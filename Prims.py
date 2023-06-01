@@ -30,7 +30,6 @@ def prim(graph):
 
     return selected_edges
 
-
 # Example usage
 graph = {
     'A': {'B': 6, 'D': 1},
@@ -40,7 +39,41 @@ graph = {
     'E': {'B': 2, 'C': 5, 'D': 1}
 }
 
-selected_edges = prim(graph)
+# Practice -------------
+# Prims
+def primsMST(graph):
+
+    # Initialize the visited vertices and edges
+    visited_vertices = []
+    selected_edges = {}
+
+    # Starting points
+    start_vertex = list(graph.keys())[0]
+    visited_vertices.append(start_vertex)
+
+    # Continue until we visit all vertices
+    while len(visited_vertices) < len(graph):
+        # We have to find min edge so delcare
+        min_edge = None
+        min_weight = sys.maxsize
+
+        # Iterate on the current set selected vertices and find their minimum neighbour
+        # After getting minimum neighbour, store it and start again from zero, with same steps.
+        # Don't stop until visited_vertices becomes equal to graph vertices
+        for vertex in visited_vertices:
+            for neighbor, weight in graph[vertex].items():
+                if neighbor not in visited_vertices and weight < min_weight:
+                    min_edge = (vertex, neighbor)
+                    min_weight = weight
+        
+        # After getting minimum edge, reflect into main answer i.e. selected_edges & visited_vertices
+        selected_edges[min_edge] = min_weight
+        visited_vertices.append(min_edge[1])
+    
+    return selected_edges
+
+
+selected_edges = primsMST(graph)
 
 print("Selected edges:")
 for edge, weight in selected_edges.items():

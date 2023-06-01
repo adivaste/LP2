@@ -43,6 +43,5 @@ def main():
     print("The A* path with total cost is:")
     print(result)
 
-
 # Execute the main function
 main()

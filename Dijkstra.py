@@ -1,6 +1,7 @@
 import sys
 
 def dijkstra(graph, start):
+    
     # Initialize distances dictionary with infinity for all nodes except the start node
     distances = {node: float('inf') for node in graph}
     distances[start] = 0
