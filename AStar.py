@@ -3,7 +3,7 @@ import queue as Q
 dict_hn = {'Delhi': 0, 'Mumbai': 205, 'Chennai': 345, 'Kolkata': 550, 'Bangalore': 790}
 
 dict_gn = {
-    'Delhi': {'Mumbai': 1420, 'Chennai': 2180, 'Kolkata': 1640, 'Bangalore': 2140},
+    'Delhi': {'Mumbai': 1420, 'Bangalore': 2140},
     'Mumbai': {'Delhi': 1420, 'Chennai': 1340, 'Kolkata': 2010, 'Bangalore': 980},
     'Chennai': {'Delhi': 2180, 'Mumbai': 1340, 'Kolkata': 1660, 'Bangalore': 350},
     'Kolkata': {'Delhi': 1640, 'Mumbai': 2010, 'Chennai': 1660, 'Bangalore': 1870},
@@ -11,7 +11,7 @@ dict_gn = {
 }
 
 start = 'Delhi'
-goal = 'Bangalore'
+goal = 'Chennai'
 result = ''
 
 
