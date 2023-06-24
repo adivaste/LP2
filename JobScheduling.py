@@ -63,4 +63,3 @@ if __name__ == '__main__':
 	print("Following is maximum profit sequence of jobs")
 	printJobScheduling(arr, 3)
 	job_scheduling(arr, 3)
-
